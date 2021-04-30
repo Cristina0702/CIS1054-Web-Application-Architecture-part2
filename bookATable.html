@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/bookingStyles.css" rel="stylesheet" />
   </head>
   <body>
     <!-- Page Header -->
@@ -50,13 +50,34 @@
       <br><br><br>
     </header>
 
-    <div class="background" style="background-image: url('img/food4.jpg')">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div id="book-a-table">
+      <div id="top-section">
+        <h2> BOOK A TABLE </h2>
+        <p>We are now open for outdoor dining in some of our restaurants and 
+          we are taking bookings for indoor dining in all of our 
+          restaurants from 17th May. In order to maintain social distancing,
+          any high chairs requested or prams brought with you are classed as
+          a seat outside whilst we follow the rule of 6.
+        </p> 
+      </div>
+
+      <div id="booking-input">
+        <input type="text"   placeholder="Name:"></input>
+        <input type="number" placeholder="No. of People:"></input>
+        <input type="date"   placeholder=""></input> <!-- placeholder = php script to get current date -->
+        <input type="time"   placeholder=""></input> <!-- placeholder = php script to get current time -->
+        <input type="email"  placeholder="Email"></input>
+        <input type="text"   placeholder="Mob. No"></input>
+      </div>
+
+      <div id="booking-submit">
+        <input type="submit"></input>
+        <div id="checkbox-div">
+          <input type="checkbox"></input>
+          I accept La nourriture de fantaisie Privacy Policy
+          
         </div>
       </div>
-    </div>
+    </div>  
   </body>
 </html>
