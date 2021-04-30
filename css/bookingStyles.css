@@ -78,6 +78,7 @@ header.title .site-heading h1 {
 
 
 #book-a-table > #booking-submit{
+    font-size: .6em;
     display:flex;
     flex-direction: column;
     text-align: center;
