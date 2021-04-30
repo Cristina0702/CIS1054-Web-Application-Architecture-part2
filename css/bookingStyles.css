@@ -44,7 +44,7 @@ header.title .site-heading h1 {
     transform: translate(-50%, -50%);
 }
 
-#book-a-table{
+#border-frame{
     
     text-align: justify;
     align-self: center;
@@ -56,7 +56,7 @@ header.title .site-heading h1 {
     padding: 3%;
 }
 
-#book-a-table > #top-section > h2{
+#border-frame > #top-section > h2{
     color: #dfaa0d;
     text-decoration: underline;
     text-align: center;
@@ -77,17 +77,16 @@ header.title .site-heading h1 {
 } 
 
 
-#book-a-table > #booking-submit{
-    font-size: .6em;
+#border-frame > #booking-submit{
+    font-size: .8em;
     display:flex;
     flex-direction: column;
     text-align: center;
-    margin-top: 10px;
     align-self: center;
     align-items: center;
 }
 
-#book-a-table > #booking-submit > input{
-    text-align: center;
+#border-frame > #booking-submit > input{
+    margin-top: 10px;
     width: 25%;
 }
