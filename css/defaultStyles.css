@@ -1,0 +1,44 @@
+#border-frame{
+    text-align: justify;
+    align-self: center;
+    border: #dfaa0d solid 3px;
+    border-radius: 5px;
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 60%;
+    padding: 3%;
+}
+
+#border-frame > #top-section > h2{
+    color: #dfaa0d;
+    text-decoration: underline;
+    text-align: center;
+    align-self: center;
+    align-items: center;
+}
+
+#booking-input, #contact-input{
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+}
+
+#booking-input > input{
+    width: 50%;
+}
+
+#border-frame > #booking-submit, #border-frame > #contact-submit{
+    font-size: .8em;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    align-self: center;
+    align-items: center;
+}
+
+#border-frame > #booking-submit > input, #border-frame > #contact-submit > input{
+    margin-top: 10px;
+    width: 25%;
+}
