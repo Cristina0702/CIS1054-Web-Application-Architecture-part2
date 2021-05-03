@@ -1,0 +1,49 @@
+h2{
+  font-size: 30px;
+  font-weight: bold;
+  color: #dfaa0d;
+  text-decoration-line: underline;
+  margin-top: 10px;
+  margin-bottom: 2px;
+  margin-left:100px;
+  font-family: 'Dancing Script', cursive;
+}
+
+p{
+  font-size: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+*{
+ box-sizing: border-box;
+}
+
+.col-5 {width: 40%;}
+.col-7 {width: 60%;}
+
+[class*="col-"] {
+  float: left;
+  padding: 10px;
+}
+
+footer {
+  position: static;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 3px;
+  background-color: white;
+  color: #dfaa0d;
+}
+
+@media screen and (max-width: 992px){
+  .col-5 {width: auto;}
+  .col-7 {width: auto;}
+  p{margin-left: auto;
+    margin-right: auto;}
+}
+@media screen and (max-width: 600px){
+  .col-5 {width: auto;}
+  .col-7 {width: auto;}
+}
