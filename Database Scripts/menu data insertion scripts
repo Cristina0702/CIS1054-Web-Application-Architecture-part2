@@ -3,9 +3,9 @@ INSERT INTO `type` (`id`, `name`) VALUES
 (2, 'Main Course'),
 (3, 'Dessert');
 
-INSERT INTO `animals` (`id`, `type`, `image`, `name`, `details`, `gluten`, `vegan`) VALUES
-(1, 1, 'img/menu-imgs/p1.jpg', 'Bruschetta', 'Bruschetta with tomato and basil! Chopped fresh tomatoes with garlic, basil, olive oil, and vinegar, ...', '0','1'),
-(2, 1, 'img/menu-imgs/p2.jpg', 'Garlic Bread', 'Fresh and flavorful Garlic Bread! Also known as the perfect beginning to any Italian style dinner! ...', '0','1'),
-(3, 2, 'img/menu-imgs/p3.jpg', 'T-Bone Steak', 'Excitement is the order of the day. Who\'s a good boy?', '1','0'),
-(4, 2, 'img/menu-imgs/p4.jpg', 'Spaghetti alla Nerano', 'Pasta alla Nerano is a Campania dish invented in the Mariagrazia restaurant, in Nerano in 1952. The ...', '1','0'),
-(5, 3, 'img/menu-imgs/p5.jpg', 'Black Forest Cake', 'This Black Forest Cake is elegant, decadent, and gorgeous. Cherries and whipped cream tucked between ...', '0', '0');
+INSERT INTO `food` (`id`, `type`, `image`, `name`, `details`, `gluten`, `vegan`) VALUES
+(1, 1, 'img/menu-imgs/p1.jpg', 'Bruschetta', 'Bruschetta with tomato and basil! Chopped fresh tomatoes with garlic, basil, olive oil, and vinegar, ...', 0,'1'),
+(2, 1, 'img/menu-imgs/p2.jpg', 'Garlic Bread', 'Fresh and flavorful Garlic Bread! Also known as the perfect beginning to any Italian style dinner! ...', 0,'1'),
+(3, 2, 'img/menu-imgs/p3.jpg', 'T-Bone Steak', 'Delicious T-Bone Steak! Sure to make your mouth water!', 1,'0'),
+(4, 2, 'img/menu-imgs/p4.jpg', 'Spaghetti alla Nerano', 'Pasta alla Nerano is a Campania dish invented in the Mariagrazia restaurant, in Nerano in 1952. The ...', 1,'0'),
+(5, 3, 'img/menu-imgs/p5.jpg', 'Black Forest Cake', 'This Black Forest Cake is elegant, decadent, and gorgeous. Cherries and whipped cream tucked between ...', 0, '0');
