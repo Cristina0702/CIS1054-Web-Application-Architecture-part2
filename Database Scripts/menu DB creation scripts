@@ -12,7 +12,7 @@ CREATE TABLE food(
  name varchar(50) NOT NULL,
  details varchar(500) NOT NULL,
  gluten bit NOT NULL,
- vegan smallint(6) NOT NULL,
+ vegan bit NOT NULL,
  PRIMARY KEY (id),
  KEY food_type (type),
  CONSTRAINT food_type FOREIGN KEY (type) REFERENCES type (id)
