@@ -1,0 +1,111 @@
+#border-frame{
+    text-align: justify;
+    align-self: center;
+    border: #dfaa0d solid 3px;
+    border-radius: 5px;
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 60%;
+    padding: 3%;
+}
+
+#border-frame > #top-section > h2{
+    color: #dfaa0d;
+    text-decoration: underline;
+    text-align: center;
+    align-self: center;
+    align-items: center;
+}
+
+#booking-input, #contact-input{
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+}
+
+#booking-input > input{
+    width: 50%;
+}
+
+#border-frame > #booking-submit, #border-frame > #contact-submit{
+    font-size: .8em;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    align-self: center;
+    align-items: center;
+}
+
+#border-frame > #booking-submit > input, #border-frame > #contact-submit > input{
+    margin-top: 10px;
+    width: 25%;
+}
+
+
+
+
+#opening-hours > h3{
+    color: #dfaa0d;
+    text-decoration: underline;
+}
+
+#opening-hours, #address, #map, #contact-details{
+    display:flex;
+    flex-direction: column;
+}
+
+#mapid{
+  height: 400px;
+  width: 60%;
+  align-self: center;
+}
+
+label{
+    display: inline-block;
+    width:100px;
+    text-align: right;
+    padding: 6px 6px 6px 0;
+}
+
+.col-25{
+  float: left;
+  width: 35%;
+  margin-top: 6px;
+}
+
+.col-75{
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.row:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#contact-input > input{
+  width: 100%;
+  padding: 12px;
+  resize: vertical;
+}
+
+#contact-input > textarea{
+    width: 100%;
+    padding: 12px;
+    resize: vertical;
+}
+
+@media screen and (max-width: 600px){
+  .col-25, .col-75, input[type=submit]{
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+#contact-input > input{
+    width: 50%;
+}

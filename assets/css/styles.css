@@ -1,0 +1,64 @@
+@font-face {
+  font-family: Bold Stylish Calligraphy;
+  src: url('fonts/Bold & Stylish Calligraphy.ttf');
+}
+
+header.title .site-heading{
+  text-align: center;
+  color: #dfaa0d;
+  margin-top: 10px;
+  margin-bottom: 2px;
+  font-family: 'Dancing Script', cursive;
+}
+
+header.title .site-heading h1 {
+  font-size: 35px;
+}
+
+@media only screen and (min-width: 768px) {
+  header.title .site-heading h1 {
+    font-size: 65px;
+  }
+}
+
+.navbar li{
+  display: inline;
+  float: inherit;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navbar .active {
+  color: #dfaa0d;
+}
+
+.navbar li a {
+  color: black;
+}
+
+.navbar{
+  float: none;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.background .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(33,37,41,0.3);
+  opacity: 0.5;
+}
+
+.background{
+  margin-bottom: 50px;
+  background: no-repeat center center;
+  background-color: #868e96;
+  background-attachment: scroll;
+  position: relative;
+  background-size: cover;
+}
