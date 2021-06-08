@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block nav %}
+    {% include 'nav.html' %}
+{% endblock %}
+
+{% block content %}
+    <h1>About us</h1>
+    <ul>
+        <li><strong>Contact us on</strong>: {{ business.telephone }}</li>
+        <li><strong>Email us on</strong>: {{ business.email }}</li>
+        <li><strong>Contact person</strong>: {{ business.contact }}</li>
+        <li><strong>Address</strong>: {{ business.address }}</li>
+    </ul>
+{% endblock %}
