@@ -5,74 +5,55 @@
 {% endblock %}
 
 {% block content %}
-<!--
-    <h1>Contact us! {{ validations.success }}</h1>
-    <p>Feel free to use the form below to contact us</p>
-    <span class="validation">{{ validations.pagemessage }}</span>
-    <div class="form-container">
-        <form id="contact" method="POST" action="contact.php">   
-            <div class="row">
-                <div class="col-25">                                     
-                    <label for="Email">Please select query type *</label>
-                </div>
-                <div class="col-75">
-                    <select id="type" name="type">
-                      <option value="complaint">Complaint</option>
-                      <option value="information">Information about a pet</option>
-                      <option value="other">Other</option>
-                    </select>
-                </div>                 
-                <span class="validation">{{ validations.typeError }}</span>
-            </div>
-            <div class="row">
-                <div class="col-25">                                     
-                    <label for="Email">Please enter your email address *</label>
-                </div>
-                <div class="col-75">
-                    <input required placeholder="your@email.com" value="{{ formvalues.email }}" type="email" name="email" id="email" aria-describedby="helpblock" aria-required="true">
-                    <span class="validation">{{ validations.emailError }}</span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-25">                                        
-                    <label for="message">Your message *</label>
-                </div>
-                <div class="col-75">
-                    <textarea required maxlength="150" id="message" name="message" placeholder="Write something.." aria-required="true" style="height:200px">{{ formvalues.message }}</textarea>
-                    <span class="validation">{{ validations.messageError }}</span>
-                </div>  
-            </div>    
-            <div class="row">
-                <input type="submit" value="Submit">
-            </div>                    
-        </form>
-    </div>
-    <p><a href="index.php">Back</a></p>-->
-
       <div id="border-frame">
         <div id="top-section">
-          <h2> CONTACT US </h2>
+          <h2> CONTACT US {{ validations.success }}</h2>
+          <br>
         </div>
-  
         <div id="contact-input">
-          <!--<form action="">-->
-          <div class="row">
+          <form id="contact" method="POST" action="contact.php">
+            <div class="row">
+              <label for="qtype">Query Type:</label>
+              <select id="qtype" name="qtype">
+                <option value="query">Query</option>
+                <option value="complaint">Complaint</option>
+                <option value="other">Other</option>
+              </select>
+             <div class="validation">{{ validations.typeError }}</div>
+            </div>   
+            <div class="row">
               <label for="cname">Name</label>
-              <input type="text" id="cname" name="fullname" placeholder="Enter full name" size:"150"></input>
+              <input type="text" id="cname" name="cname" placeholder="Enter full name" size:"150"></input>
+              <div class="validation">{{ validations.nameError }}</div>
             </div>
-          <div class="row">
+            <div class="row">
               <label for="cemail">Email address</label>
-              <input type="email" id="cemail" name="email" placeholder="Enter email address" size:"150"></input>
+              <input required placeholder="your@email.com" value="{{ formvalues.email }}" type="email" id="cemail" name="cemail" placeholder="Enter email address" size:"150" aria-describedby="helpblock" aria-required="true"></input>
+              <div class="validation">{{ validations.emailError }}</div>
             </div>
-          <div class="row">
+            <div class="row">
               <label for="csubject">Subject</label>
-              <input type="subject" id="csubject" name="subject" placeholder="Enter subject" size:"150"></input>
+              <input type="subject" id="csubject" name="csubject" placeholder="Enter subject" size:"150"></input>
+              <div class="validation">{{ validations.subjectError }}</div>
             </div>
-          <div class="row">
+            <div class="row">
               <label for="cmessage">Message</label>
-              <textarea id="cmessage" name="message" placeholder="Enter message" size:"150"></textarea>
+              <textarea required maxlength="300" id="cmessage" name="cmessage" placeholder="Enter message" aria-required="true" {{ formvalues.message }}></textarea>
+              <div class="validation">{{ validations.messageError }}</div>
             </div>
-        <!--</form>-->
+            <br>
+            <div id="contact-submit">
+              <div id="checkbox-div">
+                <input type="checkbox" name="checkbox"></input>
+                I accept La Nourriture de Fantaisie
+                <a href="privacy.html" target="_blank">Privacy Policy</a>
+                <div class="validation">{{ validations.checkboxError }}</div>
+              </div>
+              <input type="submit"></input>
+              <br><br>
+            </div>
+        </form>
+        <div class="validation-message">{{ validations.pagemessage }}</div>
       </div>
   
         <!--<div id="contact-input1">
@@ -81,17 +62,6 @@
           <input type="text" id="subject"  placeholder="Subject"></input>
           <textarea id="message" placeholder="Message"></textarea>
         </div>-->
-  
-  
-        <div id="contact-submit">
-          <div id="checkbox-div">
-            <input type="checkbox"></input>
-            I accept La Nourriture de Fantaisie
-            <a href="privacy.html" target="_blank">Privacy Policy</a>
-          </div>
-          <input type="submit"></input>
-          <br><br>
-        </div>
   
         <div id="opening-hours">
           <div class="col-25">
