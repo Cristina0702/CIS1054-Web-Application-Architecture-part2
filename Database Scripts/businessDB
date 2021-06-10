@@ -1,0 +1,11 @@
+CREATE TABLE `business` (
+ `addressl1` varchar(200) NOT NULL,
+ `addressl2` varchar(200) NOT NULL,
+ `addressl3` varchar(200) NOT NULL,
+ `addressl4` varchar(150) NOT NULL,
+ `email` varchar(200) NOT NULL,
+ `phone` varchar(30) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1
+
+INSERT INTO `business` (`addressl1`,`addressl2`, `addressl3`,`addressl4`, `email`, `phone`) VALUES
+('La Nourriture de Fantaisie,', 'Triq L-Imhazen,', 'Mdina MDN1430,', 'Malta', 'nourrituredefantaisie@gmail.com', '(+356) 2124 6000');
