@@ -2,8 +2,21 @@
     require_once __DIR__.'/bootstrap.php';
     require_once __DIR__.'/utils.php';
     require_once __DIR__.'/database.php';
-    require_once __DIR__.'/utils.php';
     
+    //Get db object
+    $db = new Db();    
+    $result = $db -> select("SELECT addressl1, addressl2, addressl3, addressl4, email, phone FROM `business`");
+
+    //Start from in-mem object
+    $business = [
+        'addressl1'   => $result[0]['addressl1'],
+        'addressl2'   => $result[0]['addressl2'],
+        'addressl3'   => $result[0]['addressl3'],
+        'addressl4'   => $result[0]['addressl4'],
+        'email'     => $result[0]['email'],
+        'phone'     => $result[0]['phone']
+    ];
+
     //The form was submitted
     if ($_SERVER['REQUEST_METHOD'] === 'POST')
     {
@@ -108,10 +121,11 @@
         //Render view with validations
         echo $twig->render('contact.html', [ 
             'validations' => $validations, 
-            'formvalues' => $formvalues ]);
+            'formvalues' => $formvalues ,
+            'business' => $business]);
     }
     else
     {
         //Render view without validations
-        echo $twig->render('contact.html');
+        echo $twig->render('contact.html', ['business' => $business]);
     }
