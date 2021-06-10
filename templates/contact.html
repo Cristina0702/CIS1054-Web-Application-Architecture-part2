@@ -55,33 +55,24 @@
         </form>
         <div class="validation-message">{{ validations.pagemessage }}</div>
       </div>
-  
-        <!--<div id="contact-input1">
-          <input type="text" id="name" placeholder="Name"></input>
-          <input type="email" id="email" placeholder="Email"></input>
-          <input type="text" id="subject"  placeholder="Subject"></input>
-          <textarea id="message" placeholder="Message"></textarea>
-        </div>-->
-  
+
         <div id="opening-hours">
           <div class="col-25">
-            <h3>Opening Hours</h3>
-            <p>
-            Monday:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp6pm - 11pm
+            <h3>Opening Hours:</h3>
+            Monday: {{ business.op_hrs_mon }}
             <br>
-            Tuesday:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp6pm - 11pm
+            Tuesday: {{ business.op_hrs_tues }}
             <br>
-            Wednesday:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp6pm - 11pm
+            Wednesday: {{ business.op_hrs_wed }}
             <br>
-            Thursday:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp6pm - 11pm
+            Thursday: {{ business.op_hrs_thurs }}
             <br>
-            Friday:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp6pm - 12am
+            Friday: {{ business.op_hrs_fri }}
             <br>
-            Saturday:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp10am - 12am
+            Saturday: {{ business.op_hrs_sat }}
             <br>
-            Sunday:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp10am - 12am
-          </p>
-          </div>
+            Sunday: {{ business.op_hrs_sun }}
+          </div>          
         </div>
   
         <div id="address">
@@ -103,7 +94,7 @@
   
         <div id="map">
           <div class="col-25">
-            <h3>Map</h3>
+            <h3>Map:</h3>
           </div>
           <div id="mapid">
           </div>
@@ -111,7 +102,7 @@
   
         <div id="contact-details">
           <div class="col-25">
-            <h3>Contact Details</h3>
+            <h3>Contact Details:</h3>
             <h5>Email: </h5>
             {{ business.email }}
             <!--nourrituredefantaisie@gmail.com-->
