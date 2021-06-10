@@ -5,7 +5,7 @@
     
     //Get db object
     $db = new Db();    
-    $result = $db -> select("SELECT addressl1, addressl2, addressl3, addressl4, email, phone FROM `business`");
+    $result = $db -> select("SELECT addressl1, addressl2, addressl3, addressl4, op_hrs_mon, op_hrs_tues, op_hrs_wed, op_hrs_thurs, op_hrs_fri, op_hrs_sat, op_hrs_sun, email, phone FROM `business`");
 
     //Start from in-mem object
     $business = [
@@ -13,8 +13,15 @@
         'addressl2'   => $result[0]['addressl2'],
         'addressl3'   => $result[0]['addressl3'],
         'addressl4'   => $result[0]['addressl4'],
-        'email'     => $result[0]['email'],
-        'phone'     => $result[0]['phone']
+        'op_hrs_mon'  => $result[0]['op_hrs_mon'],
+        'op_hrs_tues' => $result[0]['op_hrs_tues'],
+        'op_hrs_wed'  => $result[0]['op_hrs_wed'],
+        'op_hrs_thurs'=> $result[0]['op_hrs_thurs'],
+        'op_hrs_fri'  => $result[0]['op_hrs_fri'],
+        'op_hrs_sat'  => $result[0]['op_hrs_sat'],
+        'op_hrs_sun'  => $result[0]['op_hrs_sun'],
+        'email'       => $result[0]['email'],
+        'phone'       => $result[0]['phone']
     ];
 
     //The form was submitted
