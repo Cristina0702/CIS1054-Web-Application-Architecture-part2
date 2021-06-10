@@ -3,9 +3,16 @@ CREATE TABLE `business` (
  `addressl2` varchar(200) NOT NULL,
  `addressl3` varchar(200) NOT NULL,
  `addressl4` varchar(150) NOT NULL,
+ `op_hrs_mon` varchar(150) NOT NULL,
+ `op_hrs_tues` varchar(150) NOT NULL,
+ `op_hrs_wed` varchar(150) NOT NULL,
+ `op_hrs_thurs` varchar(150) NOT NULL,
+ `op_hrs_fri` varchar(150) NOT NULL,
+ `op_hrs_sat` varchar(150) NOT NULL,
+ `op_hrs_sun` varchar(150) NOT NULL,
  `email` varchar(200) NOT NULL,
  `phone` varchar(30) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1
 
-INSERT INTO `business` (`addressl1`,`addressl2`, `addressl3`,`addressl4`, `email`, `phone`) VALUES
-('La Nourriture de Fantaisie,', 'Triq L-Imhazen,', 'Mdina MDN1430,', 'Malta', 'nourrituredefantaisie@gmail.com', '(+356) 2124 6000');
+INSERT INTO `business` (`addressl1`,`addressl2`, `addressl3`,`addressl4`, `op_hrs_mon`, `op_hrs_tues`, `op_hrs_wed`, `op_hrs_thurs`, `op_hrs_fri`, `op_hrs_sat`, `op_hrs_sun`, `email`, `phone`) VALUES
+('La Nourriture de Fantaisie,', 'Triq L-Imhazen,', 'Mdina MDN1430,', 'Malta','6pm - 11pm','6pm - 11pm','6pm - 11pm','6pm - 11pm','6pm - 12am','10am - 12am','10am - 12am','nourrituredefantaisie@gmail.com', '(+356) 2124 6000');
