@@ -16,23 +16,42 @@
       </p> 
     </div>
 
-    <div id="booking-input">
-      <input type="text"   placeholder="Name:"></input>
-      <input type="number" placeholder="No. of People:"></input>
-      <input type="date"   placeholder=""></input> <!-- placeholder = php script to get current date -->
-      <input type="time"   placeholder=""></input> <!-- placeholder = php script to get current time -->
-      <input type="email"  placeholder="Email:"></input>
-      <input type="text"   placeholder="Mob. No:"></input>
-    </div>
+    <form id="booking-input" method="POST" action="bookATable.php">
+
+      <input type="text" name="name" id="name" placeholder="Name:"></input>
+      <div class="validation">{{ validations.nameError }}</div>
+      
+      <input type="number" name="people" id="people" placeholder="No. of People:"></input>
+      <div class="validation">{{ validations.peopleError }}</div>
+    
+      <input type="date" name="date" id="date" placeholder=""></input> <!-- placeholder = php script to get current date -->
+      <div class="validation">{{ validations.dateError }}</div>
+      
+      <input type="time" name="time" id="time"  placeholder=""></input> <!-- placeholder = php script to get current time -->
+      <div class="validation">{{ validations.timeError }}</div>
+      
+      <input type="email" name="cemail" id="cemail" required placeholder="Email:" value="{{formvalues.email}}" aria-describedby="helpblock" aria-required="true"></input>
+      <div class="validation">{{ validations.emailError }}</div>
+      
+      <input type="text" name="mobile" id="mobile" placeholder="Mob. No:"></input>
+      <div class="validation">{{ validations.mobileError }}</div>
+
+    <br>
 
     <div id="booking-submit">
       
       <div id="checkbox-div">
-        <input type="checkbox"></input>
-        I accept La nourriture de fantaisie 
+        <input type="checkbox" name="checkbox"></input>
+        I accept La Nourriture de Fantaisie 
         <a href="privacy.html" target="_blank">Privacy Policy</a>
+        <div class="validation">{{ validations.checkboxError }}</div>
       </div>
-      <input type="submit"></input>
+      <input type="submit"></input>      
+      <br><br>
     </div>
+
+    <div class="validation-message">{{ validations.pagemessage }}</div>
+    </form>
+
 </div>
 {% endblock %}
