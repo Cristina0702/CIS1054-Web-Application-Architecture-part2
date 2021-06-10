@@ -6,8 +6,8 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST')
     {
         //handle form submission
-        $nameErr = $emailErr = $peopleErr = $checkboxErr = "";
-        $qtype = $name = $email = $people = $mobile = "";
+        $nameErr = $dateErr = $timeErr = $emailErr = $peopleErr = $mobileErr = $checkboxErr = "";
+        $name = $date = $time = $email = $people = $mobile = "";
         $checkbox = false;
     
         //validating name
