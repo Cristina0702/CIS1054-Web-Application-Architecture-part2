@@ -86,29 +86,39 @@
   
         <div id="address">
           <div class="col-25">
-            <h3>Address</h3>
-            La Nourriture de Fantaisie,<br>
+            <h3>Address:</h3>
+            {{ business.addressl1 }}
+            <br>
+            {{ business.addressl2 }}
+            <br>
+            {{ business.addressl3 }}
+            <br>
+            {{ business.addressl4 }}
+            <!--La Nourriture de Fantaisie,<br>
             Triq L-Imhazen,<br>
             Mdina MDN1430,<br>
-            Malta
+            Malta-->
           </div>
         </div>
   
         <div id="map">
+          <div class="col-25">
             <h3>Map</h3>
-            <br>
-            <div id="mapid">
-            </div>
+          </div>
+          <div id="mapid">
+          </div>
         </div>
   
         <div id="contact-details">
           <div class="col-25">
             <h3>Contact Details</h3>
             <h5>Email: </h5>
-            nourrituredefantaisie@gmail.com
+            {{ business.email }}
+            <!--nourrituredefantaisie@gmail.com-->
             <br>
             <h5>Phone Number: </h5>
-            (+356) 2124 6000
+            {{ business.phone }}
+            <!--(+356) 2124 6000-->
           </div>
         </div>
   
