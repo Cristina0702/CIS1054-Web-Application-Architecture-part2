@@ -5,22 +5,31 @@
 {% endblock %}
 
 {% block content %}
-    <h1>{{ menu.name }}</h1>
-    <p>{{ menu.details }}</p>
-    <ul>
-        <li>Type: {{ animal.type }}</li>
-        <li>Breed: {{ animal.breed }}</li>
-        <li>Family friendliness: {{ animal.family_friendly }}</li>
-        <li>Exercise frequency: {{ animal.exercise_frequency }}</li>
-        <li>Born: {{ animal.born }}</li>
-        <li>Rescued on: {{ animal.rescued }}</li>
-    </ul>
-    <form action="" method="POST">
-        <input type="hidden" name="animalId" value="{{ animal.id }}" />
-        <input type="email" name="email" placeholder="Your email" required />
-        <input type="tel" name="phone" placeholder="Your phone" required />
-        <input type="submit" value="Adopt me" />
-    </form>
-    <p><a href="index.php">Back</a></p>
-    <img src="{{ menu.image }}" alt="{{ animal.name }}" style="width:20%">
+<div id="border-frame">
+    <div id="top-section">
+    <h2>Menu</h2>
+    <br><br><br>
+    </div>
+    <div id="menu-display">
+    {% for food in food %}
+
+    <h3>{{ food.foodName }}</h3> 
+    <div id="menu-image">
+        <img src="{{ food.image }}" alt="{{ food.foodName }}">
+    </div>
+
+        <p>{{ food.details }}</p> 
+        <p><a href="menuDetails.php?id={{ food.id }}">Details about {{ food.foodName }}</a></p>
+        
+        <!--Button that adds/removes dish from favourites and changes name accordingly-->
+        <form action="" method="POST">
+            <input type="hidden" name="foodId" value="{{ food.id }}" />
+            <button onclick="validateAndChangeButton(this)">Add to Favourites</button>
+        </form>
+        <br><br><br>
+    {% endfor %}
+</div>
+</div>
+
+<script src="assets/js/menu.js"></script>
 {% endblock %}
