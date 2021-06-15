@@ -16,7 +16,7 @@
     align-items: center;
 }
 
-#booking-input, #contact-input{
+#booking-input, #contact-input, #menu-display{
     text-align: center;
     display:flex;
     flex-direction: column;
@@ -40,11 +40,6 @@
 #border-frame > #booking-submit > input, #border-frame > #contact-submit > input{
     margin-top: 10px;
     width: 25%;
-}
-
-#opening-hours > h3{
-    color: #dfaa0d;
-    text-decoration: underline;
 }
 
 #opening-hours, #address, #map, #contact-details{
@@ -107,3 +102,10 @@ label{
   align-content: center;
 }
 
+#menu-image > img{
+  width: 40%;
+}
+
+#menu-display{
+  align-content: center;
+}
