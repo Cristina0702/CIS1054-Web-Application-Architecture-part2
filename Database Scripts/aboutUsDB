@@ -1,0 +1,15 @@
+CREATE TABLE about(
+ id int(5) NOT NULL AUTO_INCREMENT,
+ position varchar(50) NOT NULL,
+ image varchar(100) NOT NULL,
+ name varchar(50) NOT NULL,
+ surname varchar(50) NOT NULL,
+ description varchar(500) NOT NULL,
+ PRIMARY KEY (id)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1
+
+INSERT INTO `about` (`id`, `position`, `image`, `name`, `surname`, `description`) VALUES
+(1, 'Restaurant Manager','assets/img/about-img/RestM.jpg', 'Louis', 'Durand', 'Restaurant Manager, Louis Durand is responsable of dealing with suppliers, hiring and locating new employees, handling any miscellaneous duties or problems that may occur amongst many other things. He also supervises personnel in the kitchen, service area and the dinning area to ensure that everything runs smoothly and customers have an wonderful dining experience.'),
+(2, 'Host Manager', 'assets/img/about-img/HostM.jpg', 'Camille', 'Durand', 'As Host Manager, Camille Durand is responsable of ensuring that the hosting staff are working efficiently. She is also handles the training for the new employees. She ensure that everything runs smoothly at the hosting area and deals with any complaints regarding the staff. Her main ojective is to ensure that all customers feel welcome and comfortable.'),
+(3, 'Accountant', 'assets/img/about-img/Acc.jpg', 'Mary', 'Dimech', 'As the Accountant of La Nourriture de Fantaisie, Mary Dimech is responsable of all transactions within the restaurant. Her job is to balance out the income of the restuarant and provide a suitable budget for all expenses including refurbishments, upgrades and stocking. She is also responsable of ensuring all employees receive their paycheck.'),
+(4, 'Head Chef', 'assets/img/about-img/HeadC.jpg','Kyle', 'Caruana', 'Studied at one of the best culinary schools in Paris, École Ducasse, the Head Chef Kyle Caruana is responsable of creating his own unique masterpieces for customers to enjoy at La Nourriture de Fantaisie. He is also responsable of creating the menu and arranging the specials of the day, along with ensuring that the cooking staff is working efficiently and everything in the kitchen is running smoothly.');
