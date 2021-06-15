@@ -27,16 +27,6 @@ p{
   padding: 10px;
 }
 
-footer {
-  position: static;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding: 3px;
-  background-color: white;
-  color: #dfaa0d;
-}
-
 @media screen and (max-width: 992px){
   .col-5 {width: auto;}
   .col-7 {width: auto;}
