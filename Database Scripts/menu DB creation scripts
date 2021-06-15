@@ -11,6 +11,7 @@ CREATE TABLE food(
  image varchar(100) NOT NULL,
  name varchar(50) NOT NULL,
  details varchar(500) NOT NULL,
+ ingredients varchar(500) NOT NULL,
  gluten varchar(3) NOT NULL,
  vegan varchar(3) NOT NULL,
  PRIMARY KEY (id),
