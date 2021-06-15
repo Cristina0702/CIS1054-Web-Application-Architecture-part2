@@ -4,12 +4,31 @@
     {% include 'nav.html' %}
 {% endblock %}
 
+
 {% block content %}
-    <h1>About us</h1>
-    <ul>
-        <li><strong>Contact us on</strong>: {{ business.telephone }}</li>
-        <li><strong>Email us on</strong>: {{ business.email }}</li>
-        <li><strong>Contact person</strong>: {{ business.contact }}</li>
-        <li><strong>Address</strong>: {{ business.address }}</li>
-    </ul>
+<div class=container>
+    <div id="border-frame">
+    <div class=row>
+        {% for about in about %}
+
+                <div class=col-5>
+                    <br>
+                    <img src="{{ about.image }}" alt="{{ about.position }}" style="height: 350px;width: 250px;"> 
+                    <br>  
+                </div>
+
+                <div class=col-7>
+                    <br>
+                    <h2>{{ about.position }}</h2>
+                    <p><b>Name:</b> {{ about.name }} {{ about.surname }}</p>
+                    <p><b>Description:</b>  {{ about.description }} </p>   
+                    <br>            
+                </div>
+
+            {% endfor %}
+        </div> 
+                     
+    </div>
+</div>
+
 {% endblock %}
