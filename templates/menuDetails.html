@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block nav %}
+    {% include 'nav.html' %}
+{% endblock %}
+
+{% block content %}
+    <div id="border-frame">
+        <div class=row>
+            <div id="top-section">
+                <h2>Dish Details</h2>
+                <br>
+            </div>
+            
+            <!--Displaying the chosen dish details-->
+            <div id="dish-details">
+                <div class=col-5>
+                    <img src="{{ food.image }}" alt="{{ food.name }}" style="width:90%">
+                </div>
+
+                <div class=col-7>
+                    <h3>{{ food.name }}</h3>
+                    {{ food.details }}
+                    <br>
+                    <ul>
+                        <li><b>Ingredients:</b> {{food.ingredients}}</li>
+                        <li><b>Gluten Free:</b> {{ food.gluten }}</li>
+                        <li><b>Vegan:</b> {{ food.vegan }}</li>
+                    </ul>
+                    
+                    <!--Button that adds/removes dish from favourites and changes name accordingly-->
+                    <form action="" method="POST">
+                        <input type="hidden" name="foodId" value="{{ food.id }}" />
+                        <button onclick="validateAndChangeButton(this)">Add to Favourites</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
