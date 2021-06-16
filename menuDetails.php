@@ -9,40 +9,25 @@
         //Get db object
         $db = new Db();    
         //id is a querystring representing the id of the food
-        $foodId = $db -> quote($_GET['id']); //makes param safe for use in query
-        $result = $db -> select("SELECT * FROM `food` WHERE food.id=$foodId");
-       
-        $gluten = $vegan = "";
+        $foodId = $_GET['id']; //storing id value to be used in select statement
 
-        if (count(self::$result) > 0) {
-            // Food loaded from database
-            $food = [
-                    'id'                => $result[0]['id'],
-                    'type'              => $result[0]['typeName'],
-                    'image'             => $result[0]['image'],
-                    'name'              => $result[0]['name'],
-                    'details'           => $result[0]['details'],
-                    'gluten'            => $result[0]['gluten'],
-                    'vegan'             => $result[0]['vegan']
-            ];
+        $result = $db -> select("SELECT * FROM `food` WHERE food.id='$foodId'");
+        //getting the db values according to the given id
+    
+        $food = [
+                'id'                => $result[0]['id'],
+                'type'              => $result[0]['type'],
+                'image'             => $result[0]['image'],
+                'name'              => $result[0]['name'],
+                'details'           => $result[0]['details'],
+                'ingredients'       => $result[0]['ingredients'],
+                'gluten'            => $result[0]['gluten'],
+                'vegan'             => $result[0]['vegan']
+        ];
+        //storing the values in food
 
-            if($this -> $food->gluten == 0){
-                $gluten = "No";
-            }else{
-                $gluten = "Yes";
-            }
-        
-            if($this -> $food->vegan== 0){
-                $vegan = "No";
-            }else{
-                $vegan = "Yes";
-            }
-
-            // Render view
-            echo $twig->render('menuDetails.html', ['food' => $food, 'gluten' => $gluten, 'vegan' => $vegan] );
-        }
-        else
-            echo $twig->render('404.html');
+        // Render view, passing the values
+        echo $twig->render('menuDetails.html', ['food' => $food] );
     }
     else
         echo $twig->render('404.html');
