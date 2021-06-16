@@ -8,7 +8,7 @@
     {
         //Get db object
         $db = new Db();    
-        //id is a querystring representing the id of the food
+        //foodId is a querystring representing the id of the food
         $foodId = $_GET['id']; //storing id value to be used in select statement
 
         $result = $db -> select("SELECT * FROM `food` WHERE food.id='$foodId'");
