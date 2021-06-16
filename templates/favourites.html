@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block nav %}
+    {% include 'nav.html' %}
+{% endblock %}
+
+{% block content %}
+<div id="border-frame">
+    <div id="top-section">
+    <h2>Favourites</h2>
+    <br><br><br>
+    </div>
+    <div id="menu-display">
+    {% for food in food %}
+
+    <h3>{{ food.foodName }}</h3> 
+    <div id="menu-image">
+        <img src="{{ food.image }}" alt="{{ food.foodName }}">
+    </div>
+
+        <p>{{ food.details }}</p> 
+        <p><a href="menuDetails.php?id={{ food.id }}">Details about {{ food.foodName }}</a></p>
+        
+        <br><br><br>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}
