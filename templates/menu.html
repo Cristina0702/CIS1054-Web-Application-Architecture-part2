@@ -1,3 +1,4 @@
+
 {% extends "layout.html" %}
 
 {% block nav %}
@@ -5,6 +6,8 @@
 {% endblock %}
 
 {% block content %}
+
+
 <div id="border-frame">
     <div id="top-section">
     <h2>Menu</h2>
@@ -15,21 +18,30 @@
 
     <h3>{{ food.foodName }}</h3> 
     <div id="menu-image">
-        <img src="{{ food.image }}" alt="{{ food.foodName }}" style="height: 350px;width: 550px;">
+        <img src="{{ food.image }}" alt="{{ food.foodName }}">
     </div>
-
         <p>{{ food.details }}</p> 
         <p><a href="menuDetails.php?id={{ food.id }}">Details about {{ food.foodName }}</a></p>
         
         <!--Button that adds/removes dish from favourites and changes name accordingly-->
-        <form action="" method="POST">
-            <input type="hidden" name="foodId" value="{{ food.id }}" />
-            <button onclick="validateAndChangeButton(this)">Add to Favourites</button>
+        <form action="favourites.php" method="POST">
+            <input type="hidden" name="foodId" value="{{ food.id }}" onclick="postData(); "/>
+            <button id="button">Add to Favourites</button>
         </form>
         <br><br><br>
     {% endfor %}
 </div>
 </div>
 
-<script src="assets/js/menu.js"></script>
+<script>
+    var button = document.getElementById("button");
+    button.onclick = function(){
+      
+    if (button.innerHTML === "Add to Favourites"){
+        button.innerHTML = "Remove from Favourites";
+    }else if(button.innerHTML==="Remove from Favourites"){
+        button.innerHTML = "Add to Favourites";
+    }
+}
+</script>
 {% endblock %}
