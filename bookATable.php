@@ -1,111 +1,58 @@
-<?php 
-    require_once __DIR__.'/bootstrap.php';
-    require_once __DIR__.'/utils.php';   
+{% extends "layout.html" %}
 
-    //The form was submitted
-    if ($_SERVER['REQUEST_METHOD'] === 'POST')
-    {
-        //handle form submission
-        $nameErr = $dateErr = $timeErr = $emailErr = $peopleErr = $mobileErr = $checkboxErr = "";
-        $name = $date = $time = $email = $people = $mobile = "";
-        $checkbox = false;
+{% block nav %}
+    {% include 'nav.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div id="border-frame">
+    <div id="top-section">
+      <h2> BOOK A TABLE </h2>
+      <p>We are now open for outdoor and indoor dining in our 
+        restaurant from 17th May. In order to maintain social distancing,
+        any high chairs requested or prams brought with you are classed as
+        a seat outside whilst we follow the rule of 6.
+      </p> 
+    </div>
+
+    <form id="booking-input" method="POST" action="bookATable.php">
+
+      <input type="text" name="name" id="name" placeholder="Name:"></input>
+      <div class="validation">{{ validations.nameError }}</div>
+      
+      <input type="number" name="people" id="people" placeholder="No. of People:"></input>
+      <div class="validation">{{ validations.peopleError }}</div>
     
-        //validating name
-        if (!empty($_POST["name"])) {
-            $name = clean_input($_POST["name"]);
-        }
-        else
-        {
-            $nameErr = "Name is required";
-            $validations['nameError'] = $nameErr;
-        }
+      <input type="date" name="date" id="date" placeholder=""></input> <!-- placeholder = php script to get current date -->
+      <div class="validation">{{ validations.dateError }}</div>
+      
+      <input type="time" name="time" id="time"  placeholder=""></input> <!-- placeholder = php script to get current time -->
+      <div class="validation">{{ validations.timeError }}</div>
+      
+      <input type="email" name="cemail" id="cemail" required placeholder="Email:" value="{{formvalues.email}}" aria-describedby="helpblock" aria-required="true"></input>
+      <div class="validation">{{ validations.emailError }}</div>
+      
+      <input type="text" name="mobile" id="mobile" placeholder="Mob. No:"></input>
+      <div class="validation">{{ validations.mobileError }}</div>
 
-        //validating people number
-        if(!empty($_POST["people"])) {
-            $people = clean_input($_POST["people"]);
-            if($people < 0)
-            {
-                $peopleErr = "Number entered is not valid.";
-                $validations['peopleError'] = $peopleErr;
-            }
-        }
-        else{
-            $peopleErr = "Number of People is required";
-            $validations['peopleError'] = $peopleErr;
-        }
+    <br>
 
-        //validating date
-        if(!empty($_POST["date"])) {
-            $date = clean_input($_POST["date"]);
-        }
-        else{
-            $dateErr = "Date is required.";
-            $validations['dateError'] = $dateErr;
-        }
+    <div id="booking-submit">
+      
+      <div id="checkbox-div">
+        <input id="checkbox "type="checkbox" name="checkbox"></input>
+        I accept La Nourriture de Fantaisie 
+        <a href="templates/privacy.html" target="_blank">Privacy Policy</a>
+        <div class="validation">{{ validations.checkboxError }}</div>
+      </div>
+      <input onsubmit="checkPriv()" type="submit"></input>      
+      <br><br>
+    </div>
 
-        //validating time
-        if(!empty($_POST["time"])) {
-            $time = clean_input($_POST["time"]);
-        }
-        else{
-            $timeErr = "Date is required.";
-            $validations['timeError'] = $timeErr;
-        }
+    <div class="validation-message">{{ validations.pagemessage }}</div>
+    </form>
+</div>
 
-        //validating cemail
-        if (!empty($_POST["cemail"])) {
-            $cemail = clean_input($_POST["cemail"]);
-            //FILTER_VALIDATE_EMAIL is one of many validation filters: https://www.php.net/manual/en/filter.filters.validate.php
-            if (!filter_var($cemail, FILTER_VALIDATE_EMAIL))
-            {
-                $emailErr= 'The email address entered is not valid.';
-                $validations['emailError'] = $emailErr;
-            }
-        }
-        else
-        {
-            $emailErr = "Email is required";
-            $validations['emailError'] = $emailErr;
-        }
-
-         //validating mobile number
-         if(!empty($_POST["mobile"])) {
-            $mobile = clean_input($_POST["mobile"]);
-            if(strlen($mobile) != 8)
-            {
-                $mobileErr = "Mobile number entered is not valid.";
-                $validations['mobileError'] = $mobileErr;
-            }
-        }
-        else{
-            $mobileErr = "Mobile number is required";
-            $validations['mobileError'] = $mobileErr;
-        }
-        
-        if(isset($_POST['checkbox'])){
-            $checkbox = clean_input($_POST['checkbox']);
-        }else{
-            //$checkbox = false;
-            $checkboxErr = "Please agree to the Privacy Policy";
-            $validations['checkboxError'] = $checkboxErr;
-        }
-
-        //If there are no errors
-        if (empty($nameErr) && empty($peopleErr) && empty($dateErr) && empty($timeErr) && empty($emailErr) && empty($mobileErr) && empty($checkboxErr))
-        {
-            $validations['pagemessage'] = "Form submitted successfully. Thank you!";
-        }
-        else
-        {
-            $validations['pagemessage'] = "There are some issues with this form";
-        }
-            
-        //Render view with validations
-        echo $twig->render('bookATable.html', [ 
-            'validations' => $validations]);
-    }
-    else
-    {
-        //Render view without validations
-        echo $twig->render('bookATable.html');
-    }
+<script src="../assets/js/privacy.js"></script>
+{% endblock %}
