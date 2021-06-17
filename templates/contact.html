@@ -5,6 +5,8 @@
 {% endblock %}
 
 {% block content %}
+
+    <!--Contact us form with validation-->
       <div id="border-frame">
         <div id="top-section">
           <h2> CONTACT US {{ validations.success }}</h2>
@@ -12,6 +14,7 @@
         </div>
         <div id="contact-input">
           <form id="contact" method="POST" action="contact.php">
+
             <div class="row">
               <label for="qtype">Query Type:</label>
               <select id="qtype" name="qtype">
@@ -21,26 +24,31 @@
               </select>
              <div class="validation">{{ validations.typeError }}</div>
             </div>   
+
             <div class="row">
               <label for="cname">Name</label>
               <input type="text" id="cname" name="cname" placeholder="Enter full name" size:"150"></input>
               <div class="validation">{{ validations.nameError }}</div>
             </div>
+
             <div class="row">
               <label for="cemail">Email address</label>
               <input required placeholder="your@email.com" value="{{ formvalues.email }}" type="email" id="cemail" name="cemail" placeholder="Enter email address" size:"150" aria-describedby="helpblock" aria-required="true"></input>
               <div class="validation">{{ validations.emailError }}</div>
             </div>
+
             <div class="row">
               <label for="csubject">Subject</label>
               <input type="subject" id="csubject" name="csubject" placeholder="Enter subject" size:"150"></input>
               <div class="validation">{{ validations.subjectError }}</div>
             </div>
+
             <div class="row">
               <label for="cmessage">Message</label>
               <textarea required maxlength="300" id="cmessage" name="cmessage" placeholder="Enter message" aria-required="true" {{ formvalues.message }}></textarea>
               <div class="validation">{{ validations.messageError }}</div>
             </div>
+
             <br>
             <div id="contact-submit">
               <div id="checkbox-div">
@@ -56,6 +64,7 @@
         <div class="validation-message">{{ validations.pagemessage }}</div>
       </div>
 
+      <!--Displaying the opening hours stored in the database-->
         <div id="opening-hours">
           <div class="col-25">
             <h3>Opening Hours:</h3>
@@ -75,6 +84,7 @@
           </div>          
         </div>
   
+        <!--Displaying the address stored in the database-->
         <div id="address">
           <div class="col-25">
             <h3>Address:</h3>
@@ -92,6 +102,7 @@
           </div>
         </div>
   
+        <!--Displaying the map-->
         <div id="map">
           <div class="col-25">
             <h3>Map:</h3>
@@ -100,6 +111,7 @@
           </div>
         </div>
   
+        <!--Displaying the contact details stored in the database-->
         <div id="contact-details">
           <div class="col-25">
             <h3>Contact Details:</h3>
@@ -115,6 +127,7 @@
   
       </div>
   
+      <!--Script to display the map-->
       <script src="assets/js/map.js"></script>
     
 {% endblock %}

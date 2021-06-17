@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h2> PRIVACY POLICY </h2>
+{% extends "layout.html" %}
+
+{% block nav %}
+    {% include 'nav.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div id="border-frame">
+    <div id="top-section">
+      <h2> PRIVACY POLICY </h2>
       <p>Privacy Policy for La Nourriture de Fantaisie
         At fantasydining, accessible from fantasydining.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by fantasydining and how we use it.
         If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.
@@ -67,5 +68,4 @@
       </p> 
     </div>
 </div>
-</body>
-</html>
+{% endblock %}

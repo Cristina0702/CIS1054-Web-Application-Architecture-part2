@@ -9,14 +9,16 @@
 <div class=container>
     <div id="border-frame">
     <div class=row>
+        <!--Looping for all the people in the about database-->
         {% for about in about %}
 
+                <!--Displaying image-->
                 <div class=col-5>
-                    <br>
-                    <img src="{{ about.image }}" alt="{{ about.position }}" width="250" height="350"> 
+                    <img src="{{ about.image }}" alt="{{ about.position }}" style="height: 350px;width: 250px;"> 
                     <br>  
                 </div>
 
+                <!--Displaying details-->
                 <div class=col-7>
                     <br>
                     <h2>{{ about.position }}</h2>

@@ -11,12 +11,14 @@
     <br><br><br>
     </div>
     <div id="menu-display">
-    {% for food in food %}
+        <!--Looping for all the dishes stored in the food database-->
+        {% for food in food %}
 
-    <h3>{{ food.foodName }}</h3> 
-    <div id="menu-image">
-        <img src="{{ food.image }}" alt="{{ food.foodName }}">
-    </div>
+        <!--Displaying the details and image for each dish-->
+        <h3>{{ food.foodName }}</h3> 
+        <div id="menu-image">
+            <img src="{{ food.image }}" alt="{{ food.foodName }}" style="height: 350px;width: 550px;">
+        </div>
 
         <p>{{ food.details }}</p> 
         <p><a href="menuDetails.php?id={{ food.id }}">Details about {{ food.foodName }}</a></p>
